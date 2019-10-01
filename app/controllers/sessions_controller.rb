@@ -5,17 +5,18 @@ class SessionsController < ApplicationController
   
     def create
       
-      if params[:username] == nil
+      if params[:name] == nil || params[:name] == ""
        
         redirect_to sessions_new_url
       else
-            binding.pry    
-        session[:username] = params[:username]
+                
+        session[:name] = params[:name]
         redirect_to '/'
         
       end
     end
   
     def destroy
+      session.delete :name
   end
 end
