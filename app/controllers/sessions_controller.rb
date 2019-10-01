@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
        
         redirect_to sessions_new_url
       else
-               
+            binding.pry    
         session[:username] = params[:username]
         redirect_to '/'
         
